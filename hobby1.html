@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palette Lab - デジタルイラスト初心者応援サイト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Palette Lab</h1>
+        <p>描き方から機材選びまで。あなたのデジタルイラスト上達をサポートする情報サイト。</p>
+    </header>
+
+    <main class="container">
+        <!-- 検索とフィルターエリア（左にボタン、右に検索欄） -->
+        <div class="search-filter-area">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">すべて</button>
+                <button class="filter-btn" data-filter="基礎・描き方">基礎・描き方</button>
+                <button class="filter-btn" data-filter="機材・ソフト">機材・ソフト</button>
+                <button class="filter-btn" data-filter="上達のコツ">上達のコツ</button>
+            </div>
+            <input type="text" id="search-box" placeholder="記事を検索...（例：ペンタブ、線画）">
+        </div>
+
+        <h2>注目のイラスト記事</h2>
+
+        <div class="card-grid">
+            <div class="card" data-category="基礎・描き方">
+                <span class="category-tag">基礎・描き方</span>
+                <h3>初心者でも挫折しない！デジタルイラストの始め方</h3>
+                <p class="tag">難易度：低 / 所要時間：約10分</p>
+                <p>パソコンやタブレットを使ったお絵描きの基本手順。最初に揃えるべき最低限のアイテムを解説。</p>
+                <a href="#" class="btn">記事を読む</a>
+            </div>
+
+            <div class="card" data-category="機材・ソフト">
+                <span class="category-tag">機材・ソフト</span>
+                <h3>2026年版！おすすめのお絵描きソフト・アプリ比較</h3>
+                <p class="tag">難易度：中 / 所要時間：約15分</p>
+                <p>CLIP STUDIO、アイビスペイント、Photoshopなど、無料・有料ソフトの特徴と選び方を徹底比較。</p>
+                <a href="#" class="btn">記事を読む</a>
+            </div>
+
+            <div class="card" data-category="上達のコツ">
+                <span class="category-tag">上達のコツ</span>
+                <h3>「なんだか絵が硬い…」を解消する線画のコツ</h3>
+                <p class="tag">難易度：中 / 所要時間：約10分</p>
+                <p>線の強弱（強弱のつけ方）や、手のブレを防ぐキャンバスの回転テクニックでイラストのクオリティを上げる方法。</p>
+                <a href="#" class="btn">記事を読む</a>
+            </div>
+
+            <div class="card" data-category="基礎・描き方">
+                <span class="category-tag">基礎・描き方</span>
+                <h3>厚塗り・アニメ塗りって何？基本の塗り方スタイル</h3>
+                <p class="tag">難易度：中 / 所要時間：約12分</p>
+                <p>イラストの雰囲気をガラリと変える代表的な着彩スタイルの違いと、それぞれの魅力的な特徴を紹介。</p>
+                <a href="#" class="btn">記事を読む</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Palette Lab</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
