@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記事投稿 - 趣味探しブログ</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f8fafc;
+            font-family: sans-serif;
+            color: #1e293b;
+        }
+
+        header {
+            background: #a4ddd2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .form-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        textarea {
+            min-height: 250px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #be0048;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #preview {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📝 新しい記事を書く</h1>
+</header>
+
+<main class="container">
+
+    <div class="form-box">
+
+        <label for="category">カテゴリ</label>
+        <select id="category">
+            <option value="hobby">Hobby</option>
+            <option value="dialog">Dialog</option>
+        </select>
+
+        <label for="title">記事タイトル</label>
+        <input
+            type="text"
+            id="title"
+            placeholder="例：新江ノ島水族館に行ってきた！"
+        >
+
+        <label for="heading1">見出し</label>
+        <input
+            type="text"
+            id="heading1"
+            placeholder="例：新江ノ島水族館へ"
+        >
+
+        <label for="body">本文</label>
+        <textarea
+            id="body"
+            placeholder="ここに記事を書いてください..."
+        ></textarea>
+
+        <button onclick="createArticle()">
+            記事を作成する
+        </button>
+
+        <div id="preview"></div>
+
+    </div>
+
+</main>
+
+<script>
+
+function createArticle() {
+
+    const category = document.getElementById("category").value;
+    const title = document.getElementById("title").value;
+    const heading1 = document.getElementById("heading1").value;
+    const body = document.getElementById("body").value;
+
+    if (!title || !body) {
+        alert("タイトルと本文を入力してください！");
+        return;
+    }
+
+    const preview = document.getElementById("preview");
+
+    preview.style.display = "block";
+
+    preview.innerHTML =
+        "<h3>✅ 記事HTMLを作成しました！</h3>" +
+        "<p>カテゴリ：" + category + "</p>" +
+        "<p>タイトル：" + title + "</p>" +
+        "<p>このあとGitHubへ自動アップロードできるようにします。</p>";
+
+}
+</script>
+
+</body>
+</html>
