@@ -1,0 +1,38 @@
+name: Publish Article
+
+on:
+  workflow_dispatch:
+    inputs:
+      filename:
+        description: "記事ファイル名"
+        required: true
+      content:
+        description: "記事HTML"
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create article
+        env:
+          FILENAME: ${{ inputs.filename }}
+          CONTENT: ${{ inputs.content }}
+        run: |
+          mkdir -p "$(dirname "$FILENAME")"
+          printf '%s' "$CONTENT" > "$FILENAME"
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Add new article" || exit 0
+          git push
